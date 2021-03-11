@@ -21,8 +21,9 @@ function sortExtensionsByName(extensions) {
   // 检验 extType
   function checkIndexOf() {
     return extensions.some(item => {
-      console.log(`extType can only has "DigitalUser", "VirtualUser","FaxUser","Dept","AO"`)
-      return (extType.indexOf(item.extType) === -1)
+      let checkResult = (extType.indexOf(item.extType) === -1)
+      checkResult ? console.log(`extType can only has "DigitalUser", "VirtualUser","FaxUser","Dept","AO"`) : null
+      return checkResult
     })
   }
   // 排序
