@@ -155,6 +155,7 @@ function averageByQuarter(saleItems) {
   sequence2.next() --> 4;
 **/
 
+// 方法一：
 const Sequence = new Function()
 Sequence.prototype.value = 0
 Sequence.prototype.next = function () {
@@ -168,6 +169,13 @@ const sequence2 = new Sequence();
 sequence2.next() // return 3;
 sequence2.next() // return 4;
 
+// 方法二：
+function* Sequence () {
+  let value = 0
+  while (true) {
+    yield ++value
+  }
+}
 
 /**
     Question 6:
